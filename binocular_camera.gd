@@ -17,3 +17,10 @@ func _ready() -> void:
 	
 	left.fov = FOV
 	right.fov = FOV
+
+func _process(delta: float) -> void:
+	
+	ipd_mm = 60 + sin(Time.get_ticks_msec() * 0.001) * 20
+	
+	left.h_offset = ipd_mm / -2000.0
+	right.h_offset = ipd_mm / 2000.0

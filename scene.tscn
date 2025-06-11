@@ -13,7 +13,7 @@ uv1_offset = Vector3(0.5, 0, 0)
 [node name="World" type="Node3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.658512, 0.0326201, -0.751863, -0.49089, 0.738644, 0.461988, 0.570429, 0.673306, -0.470393, 0, 0, -2.3926)
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 0, -2.3926)
 material_override = SubResource("StandardMaterial3D_nxogm")
 mesh = SubResource("BoxMesh_drvgu")
 
