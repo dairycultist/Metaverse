@@ -6,13 +6,13 @@ extends "vr_control_node.gd"
 @export var down: Node
 
 func onLeft():
-	giveUpFocusTo(left)
+	return attemptGiveUpFocusTo(left)
 	
 func onRight():
-	giveUpFocusTo(right)
+	return attemptGiveUpFocusTo(right)
 	
 func onUp():
-	giveUpFocusTo(up)
+	return attemptGiveUpFocusTo(up)
 	
 func onDown():
-	giveUpFocusTo(down)
+	return attemptGiveUpFocusTo(down)

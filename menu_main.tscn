@@ -1,16 +1,31 @@
-[gd_scene load_steps=5 format=3 uid="uid://ucbmkqy0jydj"]
+[gd_scene load_steps=10 format=3 uid="uid://ucbmkqy0jydj"]
 
 [ext_resource type="Script" uid="uid://buipenoqnayc" path="res://binocular_camera.gd" id="1_1pa77"]
+[ext_resource type="Script" uid="uid://rtk7wfxtohjb" path="res://vr_control_nodes/vr_control_orchestrator.gd" id="2_cnlbs"]
 [ext_resource type="Shader" uid="uid://breebxh280ala" path="res://vr_control_nodes/vr_button.gdshader" id="2_plom5"]
+[ext_resource type="Texture2D" uid="uid://b8qns5bn3y57k" path="res://icon.svg" id="3_2ot7e"]
+[ext_resource type="Script" uid="uid://cp3tp1777ytk3" path="res://vr_control_nodes/vr_button.gd" id="4_6kvs7"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_2ot7e"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cnlbs"]
 render_priority = 0
 shader = ExtResource("2_plom5")
 shader_parameter/selected_fac = 0.0
-shader_parameter/corner_scale = 0.25
+shader_parameter/corner_scale = 0.15
+shader_parameter/tex = ExtResource("3_2ot7e")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_1pa77"]
-material = SubResource("ShaderMaterial_2ot7e")
+[sub_resource type="PlaneMesh" id="PlaneMesh_cnlbs"]
+material = SubResource("ShaderMaterial_cnlbs")
+orientation = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ja77e"]
+render_priority = 0
+shader = ExtResource("2_plom5")
+shader_parameter/selected_fac = 0.0
+shader_parameter/corner_scale = 0.15
+shader_parameter/tex = ExtResource("3_2ot7e")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_u2d4o"]
+material = SubResource("ShaderMaterial_ja77e")
 orientation = 2
 
 [node name="World" type="Node3D"]
@@ -46,6 +61,20 @@ render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="BinocularCamera/RightEyeContainer/RightEye"]
 
-[node name="Button" type="MeshInstance3D" parent="."]
+[node name="ControlOrchestrator" type="Node3D" parent="." node_paths=PackedStringArray("focused")]
+script = ExtResource("2_cnlbs")
+focused = NodePath("Button")
+
+[node name="Button" type="MeshInstance3D" parent="ControlOrchestrator" node_paths=PackedStringArray("right")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
-mesh = SubResource("PlaneMesh_1pa77")
+mesh = SubResource("PlaneMesh_cnlbs")
+skeleton = NodePath("../..")
+script = ExtResource("4_6kvs7")
+right = NodePath("../Button2")
+
+[node name="Button2" type="MeshInstance3D" parent="ControlOrchestrator" node_paths=PackedStringArray("left")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.77503, 0, -4)
+mesh = SubResource("PlaneMesh_u2d4o")
+skeleton = NodePath("../..")
+script = ExtResource("4_6kvs7")
+left = NodePath("../Button")

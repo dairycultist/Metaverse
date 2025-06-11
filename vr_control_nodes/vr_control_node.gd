@@ -1,41 +1,34 @@
-extends Node
+extends MeshInstance3D
 
-@export var focused: bool = false
+var focused: bool = false
 
 func _ready() -> void:
 	# update shader based on initial focused state
-	pass
-	
-func _input(event: InputEvent) -> void:
-	
-	if focused:
-		if event.is_action_pressed("ui_accept"):
-			onSelect()
-		elif event.is_action_pressed("ui_left"):
-			onLeft()
-		elif event.is_action_pressed("ui_right"):
-			onRight()
-		elif event.is_action_pressed("ui_up"):
-			onUp()
-		elif event.is_action_pressed("ui_down"):
-			onDown()
+	mesh.material.set("shader_parameter/selected_fac", 1.0 if focused else 0.0);
 
-func giveUpFocusTo(other: Node):
+func attemptGiveUpFocusTo(other: MeshInstance3D):
+	
+	if other == null:
+		return self
+	
 	focused = false
 	other.focused = true
-	# update shaders
+	mesh.material.set("shader_parameter/selected_fac", 0.0);
+	other.mesh.material.set("shader_parameter/selected_fac", 1.0);
+	
+	return other
 
-func onSelect():
-	pass
+func onSelect() -> MeshInstance3D:
+	return self
 
-func onLeft():
-	pass
+func onLeft() -> MeshInstance3D:
+	return self
 	
-func onRight():
-	pass
+func onRight() -> MeshInstance3D:
+	return self
 	
-func onUp():
-	pass
+func onUp() -> MeshInstance3D:
+	return self
 	
-func onDown():
-	pass
+func onDown() -> MeshInstance3D:
+	return self
