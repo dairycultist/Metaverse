@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://ucbmkqy0jydj"]
+[gd_scene load_steps=5 format=3 uid="uid://ucbmkqy0jydj"]
 
 [ext_resource type="Texture2D" uid="uid://b8qns5bn3y57k" path="res://icon.svg" id="1_ulcgi"]
+[ext_resource type="Script" uid="uid://buipenoqnayc" path="res://binocular_camera.gd" id="2_nxogm"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nxogm"]
 albedo_texture = ExtResource("1_ulcgi")
@@ -16,34 +17,35 @@ transform = Transform3D(-0.658512, 0.0326201, -0.751863, -0.49089, 0.738644, 0.4
 material_override = SubResource("StandardMaterial3D_nxogm")
 mesh = SubResource("BoxMesh_drvgu")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="Sun" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.557163, -0.647535, 0.519872, 0.165201, 0.699968, 0.694805, -0.813804, -0.301237, 0.49697, 0, 0, 0)
 
-[node name="Headset" type="Node3D" parent="."]
+[node name="BinocularCamera" type="Node3D" parent="."]
+script = ExtResource("2_nxogm")
 
-[node name="LeftEyeContainer" type="SubViewportContainer" parent="Headset"]
+[node name="LeftEyeContainer" type="SubViewportContainer" parent="BinocularCamera"]
 anchors_preset = -1
 anchor_right = 0.5
 anchor_bottom = 1.0
 stretch = true
 
-[node name="LeftEye" type="SubViewport" parent="Headset/LeftEyeContainer"]
+[node name="LeftEye" type="SubViewport" parent="BinocularCamera/LeftEyeContainer"]
 size = Vector2i(576, 648)
 
-[node name="Camera3D" type="Camera3D" parent="Headset/LeftEyeContainer/LeftEye"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.031, 0, 0)
+[node name="Camera3D" type="Camera3D" parent="BinocularCamera/LeftEyeContainer/LeftEye"]
+keep_aspect = 0
 
-[node name="RightEyeContainer" type="SubViewportContainer" parent="Headset"]
+[node name="RightEyeContainer" type="SubViewportContainer" parent="BinocularCamera"]
 anchors_preset = -1
 anchor_left = 0.5
 anchor_right = 1.0
 anchor_bottom = 1.0
 stretch = true
 
-[node name="RightEye" type="SubViewport" parent="Headset/RightEyeContainer"]
+[node name="RightEye" type="SubViewport" parent="BinocularCamera/RightEyeContainer"]
 handle_input_locally = false
 size = Vector2i(576, 648)
 render_target_update_mode = 4
 
-[node name="Camera3D" type="Camera3D" parent="Headset/RightEyeContainer/RightEye"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.031, 0, 0)
+[node name="Camera3D" type="Camera3D" parent="BinocularCamera/RightEyeContainer/RightEye"]
+keep_aspect = 0
