@@ -6,21 +6,13 @@ extends Node3D
 @onready var left_container = $LeftEyeContainer
 @onready var right_container = $RightEyeContainer
 
+# need to allow adjustment ingame via navigatable pause scene (black void like with quest)
+@export_group("Camera Settings")
 @export_range(40, 80) var ipd_mm : int = 62
 @export_range(90, 120) var FOV : int = 110
-@export_range(0.0, 0.2, 0.01) var re_aspect : float = 0.0
-
-# need to allow adjustment of FOV and IPD ingame via
-# navigatable pause scene (black void like with quest)
+@export_range(0.0, 0.2, 0.01) var re_aspect : float = 0.0 # adjust simulated screen aspect ratio
 
 func _ready() -> void:
-	
-	apply_camera_settings()
-
-func _process(delta: float) -> void:
-	
-	# for testing
-	re_aspect = (sin(Time.get_ticks_msec() * 0.0005) + 1.0) / 10
 	
 	apply_camera_settings()
 

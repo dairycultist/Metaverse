@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://ucbmkqy0jydj"]
+[gd_scene load_steps=6 format=3 uid="uid://ucbmkqy0jydj"]
 
 [ext_resource type="Texture2D" uid="uid://b8qns5bn3y57k" path="res://icon.svg" id="1_ulcgi"]
+[ext_resource type="Script" uid="uid://s6m7t13ai445" path="res://test_animate.gd" id="2_3253y"]
 [ext_resource type="Script" uid="uid://buipenoqnayc" path="res://binocular_camera.gd" id="2_nxogm"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nxogm"]
@@ -16,12 +17,14 @@ uv1_offset = Vector3(0.5, 0, 0)
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 0, -2.3926)
 material_override = SubResource("StandardMaterial3D_nxogm")
 mesh = SubResource("BoxMesh_drvgu")
+script = ExtResource("2_3253y")
 
 [node name="Sun" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.557163, -0.647535, 0.519872, 0.165201, 0.699968, 0.694805, -0.813804, -0.301237, 0.49697, 0, 0, 0)
 
 [node name="BinocularCamera" type="Node3D" parent="."]
 script = ExtResource("2_nxogm")
+re_aspect = 0.18
 
 [node name="LeftEyeContainer" type="SubViewportContainer" parent="BinocularCamera"]
 anchors_preset = -1
