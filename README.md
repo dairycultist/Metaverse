@@ -13,4 +13,4 @@ A bunch of games/worlds unified by a hub and in-game currency (metacoin). The ga
 3. Download `Metaverse.apk` to your phone. It should prompt you to open it (it may give warnings).
 
 > [!IMPORTANT]
-> This application **requires** you to have a Google cardboard (or similar) headset for your phone, as well as a gaming controller that connects to your phone.
+> This application **requires** you to have a Google cardboard (or similar) headset for your phone, as well as a gaming controller that connects to your phone. It does **not** require your phone to have a built-in gyroscope.

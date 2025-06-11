@@ -1,6 +1,18 @@
 extends "vr_control_node.gd"
 
-#VRButton
-#
-#left, right, up, down all tell it to focus another node (export!)
-#select does nothing, need to override
+@export var left: Node
+@export var right: Node
+@export var up: Node
+@export var down: Node
+
+func onLeft():
+	giveUpFocusTo(left)
+	
+func onRight():
+	giveUpFocusTo(right)
+	
+func onUp():
+	giveUpFocusTo(up)
+	
+func onDown():
+	giveUpFocusTo(down)

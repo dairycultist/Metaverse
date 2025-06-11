@@ -1,8 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://ucbmkqy0jydj"]
+[gd_scene load_steps=5 format=3 uid="uid://ucbmkqy0jydj"]
 
 [ext_resource type="Script" uid="uid://buipenoqnayc" path="res://binocular_camera.gd" id="1_1pa77"]
+[ext_resource type="Shader" uid="uid://breebxh280ala" path="res://vr_control_nodes/vr_button.gdshader" id="2_plom5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2ot7e"]
+render_priority = 0
+shader = ExtResource("2_plom5")
+shader_parameter/selected_fac = 0.0
+shader_parameter/corner_scale = 0.25
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_1pa77"]
+material = SubResource("ShaderMaterial_2ot7e")
 orientation = 2
 
 [node name="World" type="Node3D"]
@@ -38,6 +46,6 @@ render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="BinocularCamera/RightEyeContainer/RightEye"]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="Button" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
 mesh = SubResource("PlaneMesh_1pa77")
