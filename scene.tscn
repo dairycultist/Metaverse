@@ -33,7 +33,9 @@ anchor_bottom = 1.0
 stretch = true
 
 [node name="LeftEye" type="SubViewport" parent="BinocularCamera/LeftEyeContainer"]
+handle_input_locally = false
 size = Vector2i(576, 648)
+render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="BinocularCamera/LeftEyeContainer/LeftEye"]
 
