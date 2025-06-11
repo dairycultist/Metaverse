@@ -7,12 +7,12 @@ extends "vr_control_node.gd"
 
 func onLeft():
 	return attemptGiveUpFocusTo(left)
-	
+
 func onRight():
 	return attemptGiveUpFocusTo(right)
-	
+
 func onUp():
 	return attemptGiveUpFocusTo(up)
-	
+
 func onDown():
 	return attemptGiveUpFocusTo(down)
