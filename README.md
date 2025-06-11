@@ -6,14 +6,11 @@ A bunch of games/worlds unified by a hub and in-game currency (metacoin). The ga
 
 [godot](https://docs.godotengine.org/en/stable/tutorials/export/exporting_for_android.html)
 
-requires:
-- the phone vr thing
-- console controller connected to phone
-- optionally headphones
-- ability to export game to phone hehe
-
 ## Installation
 
 1. Open this page on your phone.
 2. Navigate into the `build` folder above.
 3. Download `Metaverse.apk` to your phone. It should prompt you to open it (it may give warnings).
+
+> [!IMPORTANT]
+> This application **requires** you to have a Google cardboard (or similar) headset for your phone, as well as a gaming controller that connects to your phone.

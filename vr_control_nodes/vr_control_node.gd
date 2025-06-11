@@ -2,9 +2,18 @@ extends Node
 
 @export var focused: bool = false
 
-func setFocused(value: bool):
-	focused = value
-	# update shader
+#VRSlider
+#up and down tell it to focus another node
+#left right change value
+
+func _ready() -> void:
+	# update shader based on initial focused state
+	pass
+
+func giveUpFocusTo(other: Node):
+	focused = false
+	other.focused = true
+	# update shaders
 
 func onLeft():
 	pass
@@ -20,12 +29,3 @@ func onDown():
 	
 func onSelect():
 	pass
-
-#VRButton
-#
-#left, right, up, down all tell it to focus another node (export!)
-#select does nothing, need to override
-#
-#VRSlider
-#up and down tell it to focus another node
-#left right change value
