@@ -11,3 +11,9 @@ requires:
 - console controller connected to phone
 - optionally headphones
 - ability to export game to phone hehe
+
+## Installation
+
+1. Open this page on your phone.
+2. Navigate into the `build` folder above.
+3. Download `Metaverse.apk` to your phone. It should prompt you to open it (it may give warnings).
