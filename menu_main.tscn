@@ -1,12 +1,31 @@
-[gd_scene load_steps=3 format=3 uid="uid://ucbmkqy0jydj"]
+[gd_scene load_steps=8 format=3 uid="uid://ucbmkqy0jydj"]
 
 [ext_resource type="Script" uid="uid://buipenoqnayc" path="res://binocular_camera.gd" id="1_1pa77"]
+[ext_resource type="Shader" uid="uid://cbjlqut47nfl5" path="res://sky.gdshader" id="2_plom5"]
+[ext_resource type="ArrayMesh" uid="uid://b01ox0f4u6rfy" path="res://scene/scene.obj" id="3_2ot7e"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_1pa77"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2ot7e"]
+shader = ExtResource("2_plom5")
+shader_parameter/top = Color(0.0948324, 0.108178, 0.210496, 1)
+shader_parameter/bottom = Color(0, 0, 0, 1)
+
+[sub_resource type="Sky" id="Sky_6kvs7"]
+sky_material = SubResource("ShaderMaterial_2ot7e")
+
+[sub_resource type="Environment" id="Environment_cnlbs"]
+background_mode = 2
+sky = SubResource("Sky_6kvs7")
+ambient_light_source = 1
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 0.4
+reflected_light_source = 1
 
 [node name="World" type="Node3D"]
 
 [node name="BinocularCamera" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.509977, 1.922)
 script = ExtResource("1_1pa77")
 
 [node name="LeftEyeContainer" type="SubViewportContainer" parent="BinocularCamera"]
@@ -40,9 +59,15 @@ render_target_update_mode = 4
 transform = Transform3D(0.798236, 0, -0.602345, -0.231362, 0.923291, -0.306604, 0.556139, 0.384102, 0.737004, 0, 0, -2.4816)
 mesh = SubResource("BoxMesh_1pa77")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.734473, -0.347485, 0.582927, -0.224934, 0.685761, 0.692196, -0.640277, -0.639519, 0.425512, 0, 0, 0)
-
 [node name="Debug" type="RichTextLabel" parent="."]
 offset_right = 455.0
 offset_bottom = 75.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_cnlbs")
+
+[node name="Scene" type="MeshInstance3D" parent="."]
+mesh = ExtResource("3_2ot7e")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8101, 0)

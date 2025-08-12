@@ -21,6 +21,8 @@ func _process(delta: float) -> void:
 	
 	left_cam.rotation = Gyro.rotation
 	right_cam.rotation = Gyro.rotation
+	left_cam.position = position
+	right_cam.position = position
 
 func apply_camera_settings():
 	
