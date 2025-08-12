@@ -22,13 +22,12 @@ func init_sensors():
 	var magnet: Vector3 = Input.get_magnetometer()
 	
 	if (magnet == Vector3.ZERO):
-		get_node("/root/World/Debug").text = "No gyro sensors detected"
+		get_node("/root/World/Debug").text = "No gyro sensors detected (yet)"
 	else:
 		get_node("/root/World/Debug").text = "Gyro sensors exist!"
 		enabled = true
 		_initial_yaw = atan2(-magnet.x, magnet.z)
-	
-	get_tree().process_frame.disconnect(init_sensors)
+		get_tree().process_frame.disconnect(init_sensors)
 
 func _physics_process(delta):
 	
