@@ -1,10 +1,15 @@
-[gd_scene load_steps=11 format=3 uid="uid://ucbmkqy0jydj"]
+[gd_scene load_steps=16 format=3 uid="uid://ucbmkqy0jydj"]
 
 [ext_resource type="Script" uid="uid://buipenoqnayc" path="res://binocular_camera.gd" id="1_1pa77"]
 [ext_resource type="Shader" uid="uid://cbjlqut47nfl5" path="res://sky.gdshader" id="2_plom5"]
-[ext_resource type="ArrayMesh" uid="uid://b01ox0f4u6rfy" path="res://scene/scene.obj" id="3_2ot7e"]
-[ext_resource type="ArrayMesh" uid="uid://b6t6lq0024i7r" path="res://scene/tree.obj" id="4_cnlbs"]
-[ext_resource type="Texture2D" uid="uid://dw3p4jw36cctc" path="res://scene/branch.png" id="5_ja77e"]
+[ext_resource type="ArrayMesh" uid="uid://b01ox0f4u6rfy" path="res://models/scene/scene.obj" id="3_2ot7e"]
+[ext_resource type="PackedScene" uid="uid://cymhti82foc6r" path="res://models/tree/tree_prefab.tscn" id="4_6kvs7"]
+[ext_resource type="Material" uid="uid://w428v5p5geor" path="res://models/scene/pole.tres" id="4_ja77e"]
+[ext_resource type="Shader" uid="uid://8f3dvohhv7bc" path="res://flat.gdshader" id="5_cnlbs"]
+[ext_resource type="Material" uid="uid://du0ducfr2bs6q" path="res://models/scene/bulb.tres" id="5_pqpoy"]
+[ext_resource type="Texture2D" uid="uid://curk1vdwydv8u" path="res://models/scene/powerlines.png" id="7_2i4oj"]
+[ext_resource type="ArrayMesh" uid="uid://dgarvry48c474" path="res://models/vending_machine/vending_machine.obj" id="9_fk81q"]
+[ext_resource type="Texture2D" uid="uid://cygp284p3qpjm" path="res://models/vending_machine/vending_machine.png" id="10_tcn24"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2ot7e"]
 shader = ExtResource("2_plom5")
@@ -22,16 +27,17 @@ ambient_light_color = Color(1, 1, 1, 1)
 ambient_light_energy = 0.4
 reflected_light_source = 1
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u2d4o"]
-shading_mode = 0
-albedo_color = Color(0.402669, 0.325738, 0.310731, 1)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fk81q"]
+render_priority = 0
+shader = ExtResource("5_cnlbs")
+shader_parameter/albedo = ExtResource("7_2i4oj")
+shader_parameter/color = Color(1, 1, 1, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pqpoy"]
-transparency = 2
-alpha_scissor_threshold = 0.94
-alpha_antialiasing_mode = 0
-shading_mode = 0
-albedo_texture = ExtResource("5_ja77e")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_e117p"]
+render_priority = 0
+shader = ExtResource("5_cnlbs")
+shader_parameter/albedo = ExtResource("10_tcn24")
+shader_parameter/color = Color(1, 1, 1, 1)
 
 [node name="World" type="Node3D"]
 
@@ -75,9 +81,21 @@ environment = SubResource("Environment_cnlbs")
 
 [node name="Scene" type="MeshInstance3D" parent="."]
 mesh = ExtResource("3_2ot7e")
+surface_material_override/2 = ExtResource("4_ja77e")
+surface_material_override/3 = ExtResource("5_pqpoy")
+surface_material_override/4 = SubResource("ShaderMaterial_fk81q")
 
-[node name="Tree" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.22155, 0, -1.346)
-mesh = ExtResource("4_cnlbs")
-surface_material_override/0 = SubResource("StandardMaterial3D_u2d4o")
-surface_material_override/1 = SubResource("StandardMaterial3D_pqpoy")
+[node name="Scene2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+mesh = ExtResource("3_2ot7e")
+surface_material_override/2 = ExtResource("4_ja77e")
+surface_material_override/3 = ExtResource("5_pqpoy")
+surface_material_override/4 = SubResource("ShaderMaterial_fk81q")
+
+[node name="Tree" parent="." instance=ExtResource("4_6kvs7")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.222, 0, 0)
+
+[node name="VendingMachine" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.53679, 0.0369978, -0.616259)
+mesh = ExtResource("9_fk81q")
+surface_material_override/0 = SubResource("ShaderMaterial_e117p")

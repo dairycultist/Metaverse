@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dw3p4jw36cctc"
-path.s3tc="res://.godot/imported/branch.png-cbe04051bdf0f1fc49a07c8f0ba199f0.s3tc.ctex"
-path.etc2="res://.godot/imported/branch.png-cbe04051bdf0f1fc49a07c8f0ba199f0.etc2.ctex"
+uid="uid://curk1vdwydv8u"
+path.s3tc="res://.godot/imported/powerlines.png-a3c4f66fef8685fe030ba4ea9d3a0c5e.s3tc.ctex"
+path.etc2="res://.godot/imported/powerlines.png-a3c4f66fef8685fe030ba4ea9d3a0c5e.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://scene/branch.png"
-dest_files=["res://.godot/imported/branch.png-cbe04051bdf0f1fc49a07c8f0ba199f0.s3tc.ctex", "res://.godot/imported/branch.png-cbe04051bdf0f1fc49a07c8f0ba199f0.etc2.ctex"]
+source_file="res://models/scene/powerlines.png"
+dest_files=["res://.godot/imported/powerlines.png-a3c4f66fef8685fe030ba4ea9d3a0c5e.s3tc.ctex", "res://.godot/imported/powerlines.png-a3c4f66fef8685fe030ba4ea9d3a0c5e.etc2.ctex"]
 
 [params]
 

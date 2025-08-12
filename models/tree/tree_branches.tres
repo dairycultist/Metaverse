@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://1mwakq1ejmer"]
+
+[ext_resource type="Shader" uid="uid://8f3dvohhv7bc" path="res://flat.gdshader" id="1_22fgy"]
+[ext_resource type="Texture2D" uid="uid://dw3p4jw36cctc" path="res://models/tree/branch.png" id="2_mbrfr"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_22fgy")
+shader_parameter/albedo = ExtResource("2_mbrfr")
+shader_parameter/color = Color(0.212362, 0.276942, 0.376275, 1)
