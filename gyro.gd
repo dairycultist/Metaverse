@@ -15,16 +15,20 @@ var rotation: Vector3
 
 func _ready():
 	
-	await get_tree().process_frame
+	get_tree().process_frame.connect(init_sensors)
+	
+func init_sensors():
 	
 	var magnet: Vector3 = Input.get_magnetometer()
 	
 	if (magnet == Vector3.ZERO):
-		print("uncompatible!")
+		get_node("/root/World/Debug").text = "No gyro sensors detected"
 	else:
-		print("compatible")
+		get_node("/root/World/Debug").text = "Gyro sensors exist!"
 		enabled = true
-		_initial_yaw = atan2(-magnet.x, magnet.z) 
+		_initial_yaw = atan2(-magnet.x, magnet.z)
+	
+	get_tree().process_frame.disconnect(init_sensors)
 
 func _physics_process(delta):
 	

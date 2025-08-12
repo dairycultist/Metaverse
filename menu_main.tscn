@@ -42,3 +42,7 @@ mesh = SubResource("BoxMesh_1pa77")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.734473, -0.347485, 0.582927, -0.224934, 0.685761, 0.692196, -0.640277, -0.639519, 0.425512, 0, 0, 0)
+
+[node name="Debug" type="RichTextLabel" parent="."]
+offset_right = 213.0
+offset_bottom = 88.0
