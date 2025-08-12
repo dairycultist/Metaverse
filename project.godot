@@ -15,6 +15,10 @@ run/main_scene="uid://ucbmkqy0jydj"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Gyro="*res://gyro.gd"
+
 [rendering]
 
 renderer/rendering_method="mobile"

@@ -1,51 +1,13 @@
-[gd_scene load_steps=14 format=3 uid="uid://ucbmkqy0jydj"]
+[gd_scene load_steps=3 format=3 uid="uid://ucbmkqy0jydj"]
 
 [ext_resource type="Script" uid="uid://buipenoqnayc" path="res://binocular_camera.gd" id="1_1pa77"]
-[ext_resource type="Script" uid="uid://rtk7wfxtohjb" path="res://vr_control_nodes/vr_control_orchestrator.gd" id="2_cnlbs"]
-[ext_resource type="Shader" uid="uid://breebxh280ala" path="res://vr_control_nodes/vr_button.gdshader" id="2_plom5"]
-[ext_resource type="Texture2D" uid="uid://b8qns5bn3y57k" path="res://icon.svg" id="3_2ot7e"]
-[ext_resource type="Script" uid="uid://bfm47ohf450us" path="res://vr_control_nodes/vr_button_test.gd" id="5_ja77e"]
-[ext_resource type="Shader" uid="uid://7dqu8nrbk6pp" path="res://sky.gdshader" id="6_ja77e"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_cnlbs"]
-render_priority = 0
-shader = ExtResource("2_plom5")
-shader_parameter/selected_fac = 0.0
-shader_parameter/corner_scale = 0.15
-shader_parameter/tex = ExtResource("3_2ot7e")
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_cnlbs"]
-material = SubResource("ShaderMaterial_cnlbs")
-size = Vector2(1, 1)
-orientation = 2
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ja77e"]
-render_priority = 0
-shader = ExtResource("2_plom5")
-shader_parameter/selected_fac = 0.0
-shader_parameter/corner_scale = 0.15
-shader_parameter/tex = ExtResource("3_2ot7e")
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_u2d4o"]
-material = SubResource("ShaderMaterial_ja77e")
-size = Vector2(1, 1)
-orientation = 2
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_u2d4o"]
-shader = ExtResource("6_ja77e")
-
-[sub_resource type="Sky" id="Sky_pqpoy"]
-sky_material = SubResource("ShaderMaterial_u2d4o")
-
-[sub_resource type="Environment" id="Environment_2i4oj"]
-background_mode = 2
-sky = SubResource("Sky_pqpoy")
+[sub_resource type="BoxMesh" id="BoxMesh_1pa77"]
 
 [node name="World" type="Node3D"]
 
 [node name="BinocularCamera" type="Node3D" parent="."]
 script = ExtResource("1_1pa77")
-re_aspect = 0.18
 
 [node name="LeftEyeContainer" type="SubViewportContainer" parent="BinocularCamera"]
 anchors_preset = -1
@@ -74,23 +36,9 @@ render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="BinocularCamera/RightEyeContainer/RightEye"]
 
-[node name="ControlOrchestrator" type="Node3D" parent="." node_paths=PackedStringArray("focused")]
-script = ExtResource("2_cnlbs")
-focused = NodePath("Button")
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.798236, 0, -0.602345, -0.231362, 0.923291, -0.306604, 0.556139, 0.384102, 0.737004, 0, 0, -2.4816)
+mesh = SubResource("BoxMesh_1pa77")
 
-[node name="Button" type="MeshInstance3D" parent="ControlOrchestrator" node_paths=PackedStringArray("right")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -4)
-mesh = SubResource("PlaneMesh_cnlbs")
-skeleton = NodePath("../..")
-script = ExtResource("5_ja77e")
-right = NodePath("../Button2")
-
-[node name="Button2" type="MeshInstance3D" parent="ControlOrchestrator" node_paths=PackedStringArray("left")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -4)
-mesh = SubResource("PlaneMesh_u2d4o")
-skeleton = NodePath("../..")
-script = ExtResource("5_ja77e")
-left = NodePath("../Button")
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_2i4oj")
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.734473, -0.347485, 0.582927, -0.224934, 0.685761, 0.692196, -0.640277, -0.639519, 0.425512, 0, 0, 0)
