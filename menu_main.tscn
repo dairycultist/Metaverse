@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://ucbmkqy0jydj"]
+[gd_scene load_steps=11 format=3 uid="uid://ucbmkqy0jydj"]
 
 [ext_resource type="Script" uid="uid://buipenoqnayc" path="res://binocular_camera.gd" id="1_1pa77"]
 [ext_resource type="Shader" uid="uid://cbjlqut47nfl5" path="res://sky.gdshader" id="2_plom5"]
@@ -6,9 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://c5dwth6j2bvet" path="res://models/scene/scene_prefab.tscn" id="6_ja77e"]
 [ext_resource type="ArrayMesh" uid="uid://dgarvry48c474" path="res://models/vending_machine/vending_machine.obj" id="9_fk81q"]
 [ext_resource type="Texture2D" uid="uid://cygp284p3qpjm" path="res://models/vending_machine/vending_machine.png" id="10_tcn24"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_ja77e"]
-size = Vector3(0.1, 0.1, 0.1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2ot7e"]
 shader = ExtResource("2_plom5")
@@ -39,7 +36,7 @@ shader_parameter/color = Color(1, 1, 1, 1)
 [node name="World" type="Node3D"]
 
 [node name="BinocularCamera" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.123, 0.25, -0.665)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2, 0.25, -0.6)
 script = ExtResource("1_1pa77")
 reduce_screen_width = 0.15
 
@@ -55,6 +52,7 @@ size = Vector2i(576, 648)
 render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="BinocularCamera/LeftEyeContainer/LeftEye"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2, 0.25, -0.6)
 
 [node name="RightEyeContainer" type="SubViewportContainer" parent="BinocularCamera"]
 anchors_preset = -1
@@ -69,10 +67,7 @@ size = Vector2i(576, 648)
 render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="BinocularCamera/RightEyeContainer/RightEye"]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="BinocularCamera"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.118597, 0, 0)
-mesh = SubResource("BoxMesh_ja77e")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2, 0.25, -0.6)
 
 [node name="Debug" type="RichTextLabel" parent="."]
 offset_right = 455.0
