@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://x6tedw1n45r0"]
+
+[ext_resource type="Shader" uid="uid://8f3dvohhv7bc" path="res://flat.gdshader" id="1_3px6l"]
+[ext_resource type="Texture2D" uid="uid://cfupurevmpuae" path="res://models/scene/road.png" id="2_tu444"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_3px6l")
+shader_parameter/albedo = ExtResource("2_tu444")
+shader_parameter/color = Color(1, 1, 1, 1)

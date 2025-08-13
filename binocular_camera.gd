@@ -10,6 +10,7 @@ extends Node3D
 @export_group("Camera Settings")
 @export_range(40, 80) var ipd_mm : int = 62
 @export_range(90, 120) var FOV : int = 110
+@export_range(0.0, 1.0) var reduce_screen_width : float = 0.0 # my headset was made for a narrower phone :\
 
 var yaw := 0.
 
@@ -33,5 +34,5 @@ func apply_camera_settings():
 	left_cam.fov = FOV
 	right_cam.fov = FOV
 	
-	left_container.anchor_left = 0
-	right_container.anchor_right = 1.0
+	left_container.anchor_left = reduce_screen_width
+	right_container.anchor_right = 1.0 - reduce_screen_width
