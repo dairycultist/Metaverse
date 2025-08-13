@@ -12,8 +12,14 @@ const _k: float = 0.98
 
 var enabled := false
 var rotation: Vector3
+
+func _ready() -> void:
 	
-func attempt_init_sensors():
+	# must initialize sensors AFTER scene has initialized, otherwise will return
+	# Vector3.ZERO
+	get_tree().process_frame.connect(init_sensors)
+
+func init_sensors():
 	
 	var magnet: Vector3 = Input.get_magnetometer()
 	
@@ -23,6 +29,8 @@ func attempt_init_sensors():
 		get_node("/root/World/Debug").text = "Gyro sensors exist!"
 		enabled = true
 		_initial_yaw = atan2(-magnet.x, magnet.z)
+	
+	get_tree().process_frame.disconnect(init_sensors)
 
 func _physics_process(delta):
 	
@@ -43,8 +51,6 @@ func _physics_process(delta):
 		rotation = Vector3(_pitch, _yaw - _initial_yaw, _roll)
 	
 	else:
-		
-		attempt_init_sensors()
 		
 		if (Input.is_action_pressed("ui_left")):
 			_yaw += delta * 1.

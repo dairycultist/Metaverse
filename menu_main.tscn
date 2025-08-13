@@ -1,14 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://ucbmkqy0jydj"]
+[gd_scene load_steps=11 format=3 uid="uid://ucbmkqy0jydj"]
 
 [ext_resource type="Script" uid="uid://buipenoqnayc" path="res://binocular_camera.gd" id="1_1pa77"]
 [ext_resource type="Shader" uid="uid://cbjlqut47nfl5" path="res://sky.gdshader" id="2_plom5"]
-[ext_resource type="ArrayMesh" uid="uid://b01ox0f4u6rfy" path="res://models/scene/scene.obj" id="3_2ot7e"]
-[ext_resource type="PackedScene" uid="uid://cymhti82foc6r" path="res://models/tree/tree_prefab.tscn" id="4_6kvs7"]
-[ext_resource type="Material" uid="uid://w428v5p5geor" path="res://models/scene/pole.tres" id="4_ja77e"]
-[ext_resource type="Material" uid="uid://cfkib6e30c8o6" path="res://models/scene/powerlines.tres" id="4_tcn24"]
 [ext_resource type="Shader" uid="uid://8f3dvohhv7bc" path="res://flat.gdshader" id="5_cnlbs"]
-[ext_resource type="Material" uid="uid://x6tedw1n45r0" path="res://models/scene/road.tres" id="5_e117p"]
-[ext_resource type="Material" uid="uid://du0ducfr2bs6q" path="res://models/scene/bulb.tres" id="5_pqpoy"]
+[ext_resource type="PackedScene" uid="uid://c5dwth6j2bvet" path="res://models/scene/scene_prefab.tscn" id="6_ja77e"]
 [ext_resource type="ArrayMesh" uid="uid://dgarvry48c474" path="res://models/vending_machine/vending_machine.obj" id="9_fk81q"]
 [ext_resource type="Texture2D" uid="uid://cygp284p3qpjm" path="res://models/vending_machine/vending_machine.png" id="10_tcn24"]
 
@@ -37,10 +32,6 @@ shader_parameter/albedo = ExtResource("10_tcn24")
 shader_parameter/color = Color(1, 1, 1, 1)
 
 [node name="World" type="Node3D"]
-
-[node name="Debug" type="RichTextLabel" parent="."]
-offset_right = 455.0
-offset_bottom = 75.0
 
 [node name="BinocularCamera" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.24515, -0.83148)
@@ -74,20 +65,23 @@ render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="BinocularCamera/RightEyeContainer/RightEye"]
 
+[node name="Debug" type="RichTextLabel" parent="."]
+offset_right = 455.0
+offset_bottom = 75.0
+text = "cat"
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_cnlbs")
-
-[node name="Scene" type="MeshInstance3D" parent="."]
-mesh = ExtResource("3_2ot7e")
-surface_material_override/0 = ExtResource("4_tcn24")
-surface_material_override/2 = ExtResource("5_e117p")
-surface_material_override/3 = ExtResource("4_ja77e")
-surface_material_override/4 = ExtResource("5_pqpoy")
-
-[node name="Tree" parent="." instance=ExtResource("4_6kvs7")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.222, 0, 0)
 
 [node name="VendingMachine" type="MeshInstance3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.53679, 0.0369978, -0.616259)
 mesh = ExtResource("9_fk81q")
 surface_material_override/0 = SubResource("ShaderMaterial_e117p")
+
+[node name="Scene" parent="." instance=ExtResource("6_ja77e")]
+
+[node name="Scene2" parent="." instance=ExtResource("6_ja77e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
+
+[node name="Scene3" parent="." instance=ExtResource("6_ja77e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)

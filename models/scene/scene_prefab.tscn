@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://c5dwth6j2bvet"]
+
+[ext_resource type="ArrayMesh" uid="uid://b01ox0f4u6rfy" path="res://models/scene/scene.obj" id="1_msdme"]
+[ext_resource type="Material" uid="uid://cfkib6e30c8o6" path="res://models/scene/powerlines.tres" id="2_rrav5"]
+[ext_resource type="Material" uid="uid://x6tedw1n45r0" path="res://models/scene/road.tres" id="3_o8aum"]
+[ext_resource type="Material" uid="uid://w428v5p5geor" path="res://models/scene/pole.tres" id="4_6e555"]
+[ext_resource type="Material" uid="uid://du0ducfr2bs6q" path="res://models/scene/bulb.tres" id="5_2y0ft"]
+[ext_resource type="PackedScene" uid="uid://cymhti82foc6r" path="res://models/tree/tree_prefab.tscn" id="6_bthrp"]
+
+[node name="Scene" type="MeshInstance3D"]
+mesh = ExtResource("1_msdme")
+surface_material_override/0 = ExtResource("2_rrav5")
+surface_material_override/2 = ExtResource("3_o8aum")
+surface_material_override/3 = ExtResource("4_6e555")
+surface_material_override/4 = ExtResource("5_2y0ft")
+
+[node name="Tree" parent="." instance=ExtResource("6_bthrp")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.222, 0, 0)
+skeleton = NodePath("../..")
+
+[node name="Tree2" parent="." instance=ExtResource("6_bthrp")]
+transform = Transform3D(0.202787, -4.65322e-10, -0.979223, 0.0183543, 0.999824, 0.00380099, 0.979051, -0.0187437, 0.202752, 2.03229, 0.0352876, 0.678994)
+skeleton = NodePath("../..")
+
+[node name="Tree3" parent="." instance=ExtResource("6_bthrp")]
+transform = Transform3D(-0.604599, 0, -0.79653, -0.0250474, 0.999505, 0.019012, 0.796136, 0.0314456, -0.6043, 2.292, -0.025, 1.455)
+skeleton = NodePath("../..")
+
+[node name="Tree4" parent="." instance=ExtResource("6_bthrp")]
+transform = Transform3D(-0.220612, 0, -0.975362, 0.0154735, 0.999874, -0.00349988, 0.975239, -0.0158644, -0.220585, 1.98139, 0.0407795, -0.664482)
+skeleton = NodePath("../..")
+
+[node name="Tree5" parent="." instance=ExtResource("6_bthrp")]
+transform = Transform3D(-0.0187161, 0.0586536, -0.998103, 0.016663, 0.998157, 0.0583444, 0.999686, -0.0155394, -0.019659, 1.9747, -0.0520718, -1.31747)
+skeleton = NodePath("../..")
