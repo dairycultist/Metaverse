@@ -13,10 +13,20 @@ float hash(vec2 p) {
 void sky() {
 	float fac = clamp(SKY_COORDS.y + hash(SKY_COORDS.xy) * 0.1, 0., 1.);
 
+	float s = star_smallness;
+
+	if (SKY_COORDS.y < 0.2) {
+		s *= 0.65;
+	}
+
 	float star_hash = hash(vec2(
-		floor(SKY_COORDS.x * star_smallness) / star_smallness,
-		floor(SKY_COORDS.y * star_smallness) / star_smallness
+		floor(SKY_COORDS.x * s) / s,
+		floor(SKY_COORDS.y * s) / s
 	));
+
+	if (SKY_COORDS.y < 0.05) {
+		star_hash = 0.;
+	}
 
 	if (star_hash > star_rarity) {
 		COLOR = vec3((star_hash - star_rarity) / (1. - star_rarity));
