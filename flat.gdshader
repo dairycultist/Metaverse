@@ -12,5 +12,5 @@ void fragment() {
 		discard;
 	}
 	
-	ALBEDO = sample.rgb * color;
+	ALBEDO = sample.rgb * color * smoothstep(.01, .03, FRAGCOORD.z);
 }
