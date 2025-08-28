@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://curk1vdwydv8u"
-path.s3tc="res://.godot/imported/powerlines.png-a3c4f66fef8685fe030ba4ea9d3a0c5e.s3tc.ctex"
-path.etc2="res://.godot/imported/powerlines.png-a3c4f66fef8685fe030ba4ea9d3a0c5e.etc2.ctex"
+uid="uid://cygp284p3qpjm"
+path.s3tc="res://.godot/imported/vending_machine.png-f2d3164b81452d9c13ff6564b003c761.s3tc.ctex"
+path.etc2="res://.godot/imported/vending_machine.png-f2d3164b81452d9c13ff6564b003c761.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://models/scene/powerlines.png"
-dest_files=["res://.godot/imported/powerlines.png-a3c4f66fef8685fe030ba4ea9d3a0c5e.s3tc.ctex", "res://.godot/imported/powerlines.png-a3c4f66fef8685fe030ba4ea9d3a0c5e.etc2.ctex"]
+source_file="res://models/urban_japan/vending_machine/vending_machine.png"
+dest_files=["res://.godot/imported/vending_machine.png-f2d3164b81452d9c13ff6564b003c761.s3tc.ctex", "res://.godot/imported/vending_machine.png-f2d3164b81452d9c13ff6564b003c761.etc2.ctex"]
 
 [params]
 

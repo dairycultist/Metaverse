@@ -1,5 +1,7 @@
 # Metaverse
 
+what if I make a VR program where you're in a blank white box but when you press a button the scene seamlessly changes (with a cool digital~hexagon effect like in the movies) to a beach scene with a loving busty wife
+
 https://www.pngmart.com/image/20096
 
 https://x.com/cornelia_vr/status/1777698556817858729

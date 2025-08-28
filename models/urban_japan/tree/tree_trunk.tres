@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://b2c4dm2k1en3e"]
 
-[ext_resource type="Shader" uid="uid://8f3dvohhv7bc" path="res://flat.gdshader" id="1_4dtp8"]
+[ext_resource type="Shader" uid="uid://8f3dvohhv7bc" path="res://models/flat.gdshader" id="1_4dtp8"]
 
 [resource]
 render_priority = 0

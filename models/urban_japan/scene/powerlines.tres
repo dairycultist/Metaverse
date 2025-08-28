@@ -1,7 +1,7 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://cfkib6e30c8o6"]
 
-[ext_resource type="Shader" uid="uid://8f3dvohhv7bc" path="res://flat.gdshader" id="1_jwuvm"]
-[ext_resource type="Texture2D" uid="uid://curk1vdwydv8u" path="res://models/scene/powerlines.png" id="2_4068l"]
+[ext_resource type="Shader" uid="uid://8f3dvohhv7bc" path="res://models/flat.gdshader" id="1_jwuvm"]
+[ext_resource type="Texture2D" uid="uid://curk1vdwydv8u" path="res://models/urban_japan/scene/powerlines.png" id="2_4068l"]
 
 [resource]
 render_priority = 0

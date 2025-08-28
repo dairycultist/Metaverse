@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cygp284p3qpjm"
-path.s3tc="res://.godot/imported/vending_machine.png-0aa2ff332d94845bedc8bfc918b925f5.s3tc.ctex"
-path.etc2="res://.godot/imported/vending_machine.png-0aa2ff332d94845bedc8bfc918b925f5.etc2.ctex"
+uid="uid://buqc0lxbk4q2k"
+path.s3tc="res://.godot/imported/boba_ice_cup.png-71eba157d7d750ba8d83635b9915ec4e.s3tc.ctex"
+path.etc2="res://.godot/imported/boba_ice_cup.png-71eba157d7d750ba8d83635b9915ec4e.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://models/vending_machine/vending_machine.png"
-dest_files=["res://.godot/imported/vending_machine.png-0aa2ff332d94845bedc8bfc918b925f5.s3tc.ctex", "res://.godot/imported/vending_machine.png-0aa2ff332d94845bedc8bfc918b925f5.etc2.ctex"]
+source_file="res://models/urban_japan/boba_ice_cup/boba_ice_cup.png"
+dest_files=["res://.godot/imported/boba_ice_cup.png-71eba157d7d750ba8d83635b9915ec4e.s3tc.ctex", "res://.godot/imported/boba_ice_cup.png-71eba157d7d750ba8d83635b9915ec4e.etc2.ctex"]
 
 [params]
 

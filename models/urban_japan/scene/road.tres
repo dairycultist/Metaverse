@@ -1,7 +1,7 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://x6tedw1n45r0"]
 
-[ext_resource type="Shader" uid="uid://8f3dvohhv7bc" path="res://flat.gdshader" id="1_3px6l"]
-[ext_resource type="Texture2D" uid="uid://cfupurevmpuae" path="res://models/scene/road.png" id="2_tu444"]
+[ext_resource type="Shader" uid="uid://8f3dvohhv7bc" path="res://models/flat.gdshader" id="1_3px6l"]
+[ext_resource type="Texture2D" uid="uid://cfupurevmpuae" path="res://models/urban_japan/scene/road.png" id="2_tu444"]
 
 [resource]
 render_priority = 0

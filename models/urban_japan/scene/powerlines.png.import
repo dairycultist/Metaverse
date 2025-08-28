@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfupurevmpuae"
-path.s3tc="res://.godot/imported/road.png-28555037c30466a73f5f81d3a49f318a.s3tc.ctex"
-path.etc2="res://.godot/imported/road.png-28555037c30466a73f5f81d3a49f318a.etc2.ctex"
+uid="uid://curk1vdwydv8u"
+path.s3tc="res://.godot/imported/powerlines.png-6fa4d5886c603b143d590c95b84ee8fc.s3tc.ctex"
+path.etc2="res://.godot/imported/powerlines.png-6fa4d5886c603b143d590c95b84ee8fc.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://models/scene/road.png"
-dest_files=["res://.godot/imported/road.png-28555037c30466a73f5f81d3a49f318a.s3tc.ctex", "res://.godot/imported/road.png-28555037c30466a73f5f81d3a49f318a.etc2.ctex"]
+source_file="res://models/urban_japan/scene/powerlines.png"
+dest_files=["res://.godot/imported/powerlines.png-6fa4d5886c603b143d590c95b84ee8fc.s3tc.ctex", "res://.godot/imported/powerlines.png-6fa4d5886c603b143d590c95b84ee8fc.etc2.ctex"]
 
 [params]
 

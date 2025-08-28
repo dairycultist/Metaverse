@@ -1,12 +1,12 @@
 [gd_scene load_steps=9 format=3 uid="uid://c5dwth6j2bvet"]
 
-[ext_resource type="ArrayMesh" uid="uid://b01ox0f4u6rfy" path="res://models/scene/scene.obj" id="1_msdme"]
-[ext_resource type="Material" uid="uid://cfkib6e30c8o6" path="res://models/scene/powerlines.tres" id="2_rrav5"]
-[ext_resource type="Shader" uid="uid://8f3dvohhv7bc" path="res://flat.gdshader" id="3_ftbq2"]
-[ext_resource type="Material" uid="uid://x6tedw1n45r0" path="res://models/scene/road.tres" id="3_o8aum"]
-[ext_resource type="Material" uid="uid://w428v5p5geor" path="res://models/scene/pole.tres" id="4_6e555"]
-[ext_resource type="Material" uid="uid://du0ducfr2bs6q" path="res://models/scene/bulb.tres" id="5_2y0ft"]
-[ext_resource type="PackedScene" uid="uid://cymhti82foc6r" path="res://models/tree/tree_prefab.tscn" id="6_bthrp"]
+[ext_resource type="ArrayMesh" uid="uid://b01ox0f4u6rfy" path="res://models/urban_japan/scene/scene.obj" id="1_msdme"]
+[ext_resource type="Material" uid="uid://cfkib6e30c8o6" path="res://models/urban_japan/scene/powerlines.tres" id="2_rrav5"]
+[ext_resource type="Shader" uid="uid://8f3dvohhv7bc" path="res://models/flat.gdshader" id="3_ftbq2"]
+[ext_resource type="Material" uid="uid://x6tedw1n45r0" path="res://models/urban_japan/scene/road.tres" id="3_o8aum"]
+[ext_resource type="Material" uid="uid://w428v5p5geor" path="res://models/urban_japan/scene/pole.tres" id="4_6e555"]
+[ext_resource type="Material" uid="uid://du0ducfr2bs6q" path="res://models/urban_japan/scene/bulb.tres" id="5_2y0ft"]
+[ext_resource type="PackedScene" uid="uid://cymhti82foc6r" path="res://models/urban_japan/tree/tree_prefab.tscn" id="6_bthrp"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2qxi2"]
 render_priority = 0

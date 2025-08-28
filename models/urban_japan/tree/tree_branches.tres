@@ -1,7 +1,7 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://1mwakq1ejmer"]
 
-[ext_resource type="Shader" uid="uid://8f3dvohhv7bc" path="res://flat.gdshader" id="1_22fgy"]
-[ext_resource type="Texture2D" uid="uid://dw3p4jw36cctc" path="res://models/tree/branch.png" id="2_mbrfr"]
+[ext_resource type="Shader" uid="uid://8f3dvohhv7bc" path="res://models/flat.gdshader" id="1_22fgy"]
+[ext_resource type="Texture2D" uid="uid://dw3p4jw36cctc" path="res://models/urban_japan/tree/branch.png" id="2_mbrfr"]
 
 [resource]
 render_priority = 0

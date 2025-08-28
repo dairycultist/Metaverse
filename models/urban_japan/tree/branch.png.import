@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dw3p4jw36cctc"
-path.s3tc="res://.godot/imported/branch.png-4ec29b79f7a1ae22317ed7ac977a610e.s3tc.ctex"
-path.etc2="res://.godot/imported/branch.png-4ec29b79f7a1ae22317ed7ac977a610e.etc2.ctex"
+path.s3tc="res://.godot/imported/branch.png-63408741cca92f49a4a41c3b11bd4943.s3tc.ctex"
+path.etc2="res://.godot/imported/branch.png-63408741cca92f49a4a41c3b11bd4943.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://models/tree/branch.png"
-dest_files=["res://.godot/imported/branch.png-4ec29b79f7a1ae22317ed7ac977a610e.s3tc.ctex", "res://.godot/imported/branch.png-4ec29b79f7a1ae22317ed7ac977a610e.etc2.ctex"]
+source_file="res://models/urban_japan/tree/branch.png"
+dest_files=["res://.godot/imported/branch.png-63408741cca92f49a4a41c3b11bd4943.s3tc.ctex", "res://.godot/imported/branch.png-63408741cca92f49a4a41c3b11bd4943.etc2.ctex"]
 
 [params]
 
