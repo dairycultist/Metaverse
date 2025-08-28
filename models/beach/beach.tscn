@@ -6,7 +6,7 @@
 shader = ExtResource("1_uha78")
 shader_parameter/top = Color(0, 0, 0, 1)
 shader_parameter/bottom = Color(0.0941176, 0.109804, 0.211765, 1)
-shader_parameter/c = 0.005
+shader_parameter/c = 0.0
 shader_parameter/cel_size = 1200.0
 
 [sub_resource type="Sky" id="Sky_6kvs7"]
