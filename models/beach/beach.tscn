@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://cmm5jat145het"]
+
+[ext_resource type="Shader" uid="uid://cbjlqut47nfl5" path="res://models/sky.gdshader" id="1_uha78"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m4als"]
+shader = ExtResource("1_uha78")
+shader_parameter/top = Color(0, 0, 0, 1)
+shader_parameter/bottom = Color(0.0941176, 0.109804, 0.211765, 1)
+shader_parameter/c = 0.005
+shader_parameter/cel_size = 1200.0
+
+[sub_resource type="Sky" id="Sky_6kvs7"]
+sky_material = SubResource("ShaderMaterial_m4als")
+
+[sub_resource type="Environment" id="Environment_bfey3"]
+background_mode = 2
+sky = SubResource("Sky_6kvs7")
+ambient_light_source = 1
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 0.4
+reflected_light_source = 1
+fog_density = 0.188
+volumetric_fog_density = 1.0
+
+[node name="Beach" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_bfey3")

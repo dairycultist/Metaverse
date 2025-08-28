@@ -3,10 +3,11 @@ render_mode unshaded;
 
 uniform sampler2D albedo: source_color;
 uniform vec3 color : source_color = vec3(1.);
+uniform float uv_scale = 1.0;
 
 void fragment() {
 
-	vec4 sample = texture(albedo, UV);
+	vec4 sample = texture(albedo, UV * uv_scale);
 
 	if (sample.a < 0.9) {
 		discard;

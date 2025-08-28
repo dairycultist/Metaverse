@@ -2,9 +2,8 @@ shader_type sky;
 
 uniform vec3 top : source_color;
 uniform vec3 bottom : source_color;
-
-uniform float star_smallness : hint_range(200., 2000.) = 2000.;
-uniform float star_rarity : hint_range(.98, .999) = .999;
+uniform float c : hint_range(0., 1.) = 0.;
+uniform float cel_size = 800.;
 
 float hash(vec2 p) {
   return fract(sin(dot(p, vec2(127.1,311.7))) * 43758.5453123);
@@ -13,23 +12,10 @@ float hash(vec2 p) {
 void sky() {
 	float fac = clamp(SKY_COORDS.y + hash(SKY_COORDS.xy) * 0.1, 0., 1.);
 
-	float s = star_smallness;
+	//SKY_COORDS.xy
 
-	if (SKY_COORDS.y < 0.2) {
-		s *= 0.65;
-	}
-
-	float star_hash = hash(vec2(
-		floor(SKY_COORDS.x * s) / s,
-		floor(SKY_COORDS.y * s) / s
-	));
-
-	if (SKY_COORDS.y < 0.05) {
-		star_hash = 0.;
-	}
-
-	if (star_hash > star_rarity) {
-		COLOR = vec3((star_hash - star_rarity) / (1. - star_rarity));
+	if (float(int(SKY_COORDS.x * cel_size + c * 30.) % 60) / 60. < c || float(int(SKY_COORDS.y * cel_size + c * 30.) % 120) / 60. < c * 2.) {
+		COLOR = vec3(1.);
 	} else {
 		COLOR = mix(top, bottom, fac);
 	}
