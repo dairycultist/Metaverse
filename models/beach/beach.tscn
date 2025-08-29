@@ -2,19 +2,19 @@
 
 [ext_resource type="Shader" uid="uid://cbjlqut47nfl5" path="res://models/sky.gdshader" id="1_uha78"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_m4als"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uha78"]
 shader = ExtResource("1_uha78")
-shader_parameter/top = Color(0, 0, 0, 1)
-shader_parameter/bottom = Color(0.0941176, 0.109804, 0.211765, 1)
-shader_parameter/c = 0.0
+shader_parameter/top = Color(0.450814, 0.717056, 0.957989, 1)
+shader_parameter/bottom = Color(0.730182, 0.84338, 0.992613, 1)
+shader_parameter/c = 0.218
 shader_parameter/cel_size = 1200.0
 
-[sub_resource type="Sky" id="Sky_6kvs7"]
-sky_material = SubResource("ShaderMaterial_m4als")
+[sub_resource type="Sky" id="Sky_m4als"]
+sky_material = SubResource("ShaderMaterial_uha78")
 
 [sub_resource type="Environment" id="Environment_bfey3"]
 background_mode = 2
-sky = SubResource("Sky_6kvs7")
+sky = SubResource("Sky_m4als")
 ambient_light_source = 1
 ambient_light_color = Color(1, 1, 1, 1)
 ambient_light_energy = 0.4

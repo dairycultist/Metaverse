@@ -13,24 +13,28 @@ void sky() {
 	float fac = clamp(SKY_COORDS.y + hash(SKY_COORDS.xy) * 0.1, 0., 1.);
 
 	//SKY_COORDS.xy
+	
+	float d = pow(c, 2);
 
 	float cel_unique_a = hash(
 		vec2(
-			float(int(SKY_COORDS.x * cel_size + c * 30.) / 60) / 60.,
-			float(int(SKY_COORDS.y * cel_size + c * 30.) / 120) / 60.
+			float(int(SKY_COORDS.x * cel_size + d * 30.) / 60) / 60.,
+			float(int(SKY_COORDS.y * cel_size + d * 30.) / 120) / 60.
 		)
 	);
 
 	float cel_unique_b = hash(
 		vec2(
-			float(int((SKY_COORDS.x + 2.1) * cel_size + c * 30.) / 60) / 60.,
-			float(int((SKY_COORDS.y + 4.5) * cel_size + c * 30.) / 120) / 60.
+			float(int((SKY_COORDS.x + 2.1) * cel_size + d * 30.) / 60) / 60.,
+			float(int((SKY_COORDS.y + 4.5) * cel_size + d * 30.) / 120) / 60.
 		)
 	);
+	
+	float e = pow(c, 1. + mod(cel_unique_b, 2.));
 
 	if (
-		   float(int(SKY_COORDS.x * cel_size + c * 30.) % 60) / 60. < c
-		|| float(int(SKY_COORDS.y * cel_size + c * 30.) % 120) / 60. < c * 2.) {
+		   mod(SKY_COORDS.x * cel_size + e * 30., 60) / 60. < e
+		|| mod(SKY_COORDS.y * cel_size + e * 30., 120) / 60. < e * 2.) {
 		COLOR = vec3(1.);
 	} else {
 		COLOR = mix(mix(top, bottom, fac), vec3(cel_unique_a, cel_unique_b, 1.0), c);

@@ -1,6 +1,11 @@
 # Metaverse
 
-what if I make a VR program where you're in a blank white box but when you press a button the scene seamlessly changes (with a cool digital~hexagon effect like in the movies) to a beach scene with a loving busty wife
+what if I make a VR program where you're in a blank white box but when you press a button the scene
+seamlessly changes (with a cool digital~hexagon effect like in the movies) to a beach scene with a
+loving busty wife
+
+a little closed-off section of beach with rocks and coconut palms on either side and brush behind
+to keep it private
 
 https://www.pngmart.com/image/20096
 
