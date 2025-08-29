@@ -10,33 +10,35 @@ float hash(vec2 p) {
 }
 
 void sky() {
-	float fac = clamp(SKY_COORDS.y + hash(SKY_COORDS.xy) * 0.1, 0., 1.);
-
-	//SKY_COORDS.xy
+	float x = SKY_COORDS.x;
+	float y = abs(SKY_COORDS.y - 0.5) * 2.0;
 	
+	// so cels shrink slowly then accelerate
 	float d = pow(c, 2);
 
 	float cel_unique_a = hash(
 		vec2(
-			float(int(SKY_COORDS.x * cel_size + d * 30.) / 60) / 60.,
-			float(int(SKY_COORDS.y * cel_size + d * 30.) / 120) / 60.
+			float(int(x * cel_size + d * 30.) / 60) / 60.,
+			float(int(y * cel_size + d * 30.) / 240) / 60.
 		)
 	);
 
 	float cel_unique_b = hash(
 		vec2(
-			float(int((SKY_COORDS.x + 2.1) * cel_size + d * 30.) / 60) / 60.,
-			float(int((SKY_COORDS.y + 4.5) * cel_size + d * 30.) / 120) / 60.
+			float(int((x + 2.) * cel_size + d * 30.) / 60) / 60.,
+			float(int((y + 4.) * cel_size + d * 30.) / 240) / 60.
 		)
 	);
 	
+	// so each cel shrinks at a different rate
 	float e = pow(c, 1. + mod(cel_unique_b, 2.));
 
 	if (
-		   mod(SKY_COORDS.x * cel_size + e * 30., 60) / 60. < e
-		|| mod(SKY_COORDS.y * cel_size + e * 30., 120) / 60. < e * 2.) {
+		   mod(x * cel_size + e * 30., 60) / 60. < e
+		|| mod(y * cel_size + e * 120., 240) / 60. < e * 4.) {
 		COLOR = vec3(1.);
 	} else {
+		float fac = clamp(SKY_COORDS.y + hash(vec2(SKY_COORDS.x, SKY_COORDS.y)) * 0.1, 0., 1.);
 		COLOR = mix(mix(top, bottom, fac), vec3(cel_unique_a, cel_unique_b, 1.0), c);
 	}
 }
