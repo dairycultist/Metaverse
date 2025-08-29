@@ -1,7 +1,6 @@
 shader_type sky;
 
-uniform vec3 top : source_color;
-uniform vec3 bottom : source_color;
+uniform sampler2D panorama: source_color;
 uniform float c : hint_range(0., 1.) = 0.;
 uniform int cel_count : hint_range(0, 1000) = 12;
 
@@ -43,7 +42,6 @@ void sky() {
 		|| mod(y * cel_size + e * 12., 24) / 6. < e * 4.) {
 		COLOR = vec3(1.);
 	} else {
-		float fac = clamp(SKY_COORDS.y + hash(vec2(SKY_COORDS.x, SKY_COORDS.y)) * 0.1, 0., 1.);
-		COLOR = mix(mix(top, bottom, fac), vec3(cel_unique_a, cel_unique_b, 1.0), c);
+		COLOR = mix(texture(panorama, SKY_COORDS.xy).rgb, vec3(cel_unique_a, cel_unique_b, 1.0), c);
 	}
 }

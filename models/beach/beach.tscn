@@ -1,11 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://cmm5jat145het"]
+[gd_scene load_steps=8 format=3 uid="uid://cmm5jat145het"]
 
 [ext_resource type="Shader" uid="uid://cbjlqut47nfl5" path="res://models/sky.gdshader" id="1_uha78"]
+[ext_resource type="Texture2D" uid="uid://d4nyhgj384hms" path="res://models/beach/sky.jpg" id="2_0vmvk"]
+[ext_resource type="Script" uid="uid://d1ule5c5iwv4k" path="res://models/beach/test.gd" id="2_m4als"]
+[ext_resource type="PackedScene" uid="uid://doo5m5nxm6les" path="res://binocular_camera.tscn" id="3_bfey3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uha78"]
 shader = ExtResource("1_uha78")
-shader_parameter/top = Color(0.450814, 0.717056, 0.957989, 1)
-shader_parameter/bottom = Color(0.730182, 0.84338, 0.992613, 1)
+shader_parameter/panorama = ExtResource("2_0vmvk")
 shader_parameter/c = 0.0
 shader_parameter/cel_count = 20
 
@@ -22,7 +24,15 @@ reflected_light_source = 1
 fog_density = 0.188
 volumetric_fog_density = 1.0
 
-[node name="Beach" type="Node3D"]
+[node name="World" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_bfey3")
+script = ExtResource("2_m4als")
+
+[node name="Debug" type="RichTextLabel" parent="."]
+offset_right = 455.0
+offset_bottom = 75.0
+text = "cat"
+
+[node name="BinocularCamera" parent="." instance=ExtResource("3_bfey3")]

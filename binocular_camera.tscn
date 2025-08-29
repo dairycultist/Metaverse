@@ -1,0 +1,34 @@
+[gd_scene load_steps=2 format=3 uid="uid://doo5m5nxm6les"]
+
+[ext_resource type="Script" uid="uid://buipenoqnayc" path="res://binocular_camera.gd" id="1_ogosy"]
+
+[node name="BinocularCamera" type="Node3D"]
+script = ExtResource("1_ogosy")
+reduce_screen_width = 0.15
+
+[node name="LeftEyeContainer" type="SubViewportContainer" parent="."]
+anchors_preset = -1
+anchor_right = 0.5
+anchor_bottom = 1.0
+stretch = true
+
+[node name="LeftEye" type="SubViewport" parent="LeftEyeContainer"]
+handle_input_locally = false
+size = Vector2i(576, 648)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="LeftEyeContainer/LeftEye"]
+
+[node name="RightEyeContainer" type="SubViewportContainer" parent="."]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 1.0
+anchor_bottom = 1.0
+stretch = true
+
+[node name="RightEye" type="SubViewport" parent="RightEyeContainer"]
+handle_input_locally = false
+size = Vector2i(576, 648)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="RightEyeContainer/RightEye"]

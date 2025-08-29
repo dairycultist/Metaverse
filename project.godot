@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Metaverse"
-run/main_scene="uid://ucbmkqy0jydj"
+run/main_scene="uid://cmm5jat145het"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
