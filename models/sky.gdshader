@@ -13,6 +13,8 @@ void sky() {
 	float x = SKY_COORDS.x;
 	float y = abs(SKY_COORDS.y - 0.5) * 2.0;
 	
+	y = y + 1. - sqrt(1. - y * y);
+	
 	// so cels shrink slowly then accelerate
 	float d = pow(c, 2);
 
